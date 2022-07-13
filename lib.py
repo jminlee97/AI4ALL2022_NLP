@@ -112,6 +112,18 @@ def load_glove_embeddings():
 #     plt.title(title)
 #     plt.show()
 
+def get_all_tokens(sentences):
+    tokens = []
+    for sentence in sentences:
+        tokens.extend(get_tokens(sentence))
+    return tokens
+
+def get_tokens(sentence):
+    tokens = []
+    for token in nltk.word_tokenize(sentence):
+        tokens.append(token.lower())
+    return tokens
+    
 def create_pie(demographics, property, title=None):
     df = pd.DataFrame.from_dict(demographics)
     df_agg = df.groupby([property])[property]
