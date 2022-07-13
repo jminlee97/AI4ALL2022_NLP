@@ -7,7 +7,13 @@ from IPython.display import HTML, display
 import tabulate
 import matplotlib.pyplot as plt
 import wordcloud
-
+import spacy
+import itertools
+from collections import Counter
+import statistics
+import pandas as pd
+import nltk
+nltk.download('punkt')
 
 DEMOGRAPHIC_CSV = 'data/demographic.csv'
 HM_CSV = 'data/cleaned_hm.csv'
